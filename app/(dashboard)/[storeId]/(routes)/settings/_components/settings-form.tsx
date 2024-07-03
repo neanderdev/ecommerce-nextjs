@@ -25,6 +25,8 @@ import { Heading } from "@/components/ui/heading";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 
+import { useOrigin } from "@/hooks/use-origin";
+
 interface SettingsForm {
     initialData: Store;
 };
@@ -38,6 +40,7 @@ type SettingsFormValues = z.infer<typeof formSchema>;
 export function SettingsForm({ initialData }: SettingsForm) {
     const params = useParams();
     const router = useRouter();
+    const origin = useOrigin();
 
     const [open, setOpen] = useState(false);
     const [loading, setLoading] = useState(false);
