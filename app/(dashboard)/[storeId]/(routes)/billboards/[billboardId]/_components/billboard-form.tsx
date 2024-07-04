@@ -66,8 +66,8 @@ export function BillboardForm({ initialData }: BillboardForm) {
                 await axios.post(`/api/${params.storeId}/billboards`, data);
             }
 
-            router.refresh();
             router.push(`/${params.storeId}/billboards`);
+            router.refresh();
             toast.success(toastMessage);
         } catch (error) {
             toast.error("Something went wrong.");
@@ -82,8 +82,8 @@ export function BillboardForm({ initialData }: BillboardForm) {
 
             await axios.delete(`/api/${params.storeId}/billboards/${params.billboardId}`);
 
-            router.refresh();
             router.push(`/${params.storeId}/billboards`);
+            router.refresh();
             toast.success("Billboard deleted.");
         } catch (error) {
             toast.error("Make sure you removed all categories using this billboard first.");
