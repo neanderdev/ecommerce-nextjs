@@ -63,7 +63,7 @@ export function ImageUpload({
                 ))}
             </div>
 
-            <CldUploadWidget onSuccess={onUpload} uploadPreset="hi1xb142">
+            <CldUploadWidget onUpload={onUpload} uploadPreset="hi1xb142">
                 {({ open }) => {
                     function onClick() {
                         open();
